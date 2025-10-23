@@ -1,23 +1,14 @@
-# 💧 Hydrogrid Smart Water Management System
-
+💧 Hydrogrid Smart Water Management System
 A full-stack MERN application for smart cities, designed to monitor, diagnose, and optimize urban water usage across zones. Built for sponsor-facing deployment, field diagnostics, and executive reporting.
 
----
-
-## 🚀 Features
-
-- 📍 Zone-based sensor monitoring
-- 📊 Real-time usage charts and alerts
-- 🧠 AI-powered diagnostic engine with recommendations
-- 📅 Daily scheduling and technician checklists
-- 📤 Excel and PDF export for sponsor visibility
-- 🔐 Role-based dashboards (admin vs technician)
-- 📱 Mobile-responsive layout for field access
-
----
-
-## 🧱 Tech Stack
-
+🚀 Key Features
+📍 Zone-based sensor monitoring
+📊 Real-time usage charts and alerts
+🧠 Diagnostic engine with recommendations
+📅 Daily scheduling and reporting
+📤 Excel export for sponsor visibility
+📱 Mobile-responsive for field technicians
+🧱 Tech Stack
 Layer
 
 Technology
@@ -36,98 +27,37 @@ MongoDB, Mongoose
 
 Deployment
 
-Vercel (Frontend), Render (Backend), MongoDB Atlas
-
-DevOps
-
-Docker, GitHub Actions (optional)
+Vercel + Render
 
 🗂️ Folder Structure
 
-hydrogrid-smart-water/
-├── client/        # React frontend
-│   ├── components/
-│   │   ├── dashboard/
-│   │   ├── admin/
-│   │   ├── technician/
-│   │   └── common/
-│   └── ...
-└── server/        # Express backend
-    ├── models/        # MongoDB schemas
-    ├── routes/        # API endpoints
-    ├── controllers/   # Business logic
-    ├── utils/         # Diagnostic engine, helpers
-    └── ...
+hydrogrid-smart-water/ ├── client/ # React frontend └── server/ # Express backend ├── models/ # MongoDB schemas ├── routes/ # API endpoints ├── controllers/ # Business logic ├── utils/ # Diagnostic helpers
 
 📦 Installation
 
-git clone https://github.com/hydrogrid/hydrogrid-smart-water.git
-cd hydrogrid-smart-water
-npm install
-cd client && npm install
+git clone https://github.com/hydrogrid/hydrogrid-smart-water.git cd hydrogrid-smart-water npm install cd client && npm install
 
 Create a .env file in /server with:
 
 MONGO_URI=your_mongodb_connection_string
 
-🧪 Diagnostic Logic Example
+🧪 Sample Diagnostic Logic
 
-if (reading.value > threshold) {
-  createDiagnostic({
-    zone: zoneId,
-    issue: 'High usage',
-    recommendation: 'Inspect for leaks or overuse',
-    timestamp: new Date()
-  });
-}
+if (reading.value > threshold) { createDiagnostic({ zone: zoneId, issue: 'High usage', recommendation: 'Inspect for leaks or overuse', timestamp: new Date() }); }
 
-📊 Dashboard Modules
+📊 Dashboard Preview
 
 ✅ Zone overview with sensor health
 
-📈 Usage charts (Recharts)
+📈 Line charts for water usage
 
 ⚠️ Diagnostic panel with timestamps
 
-🗓️ Schedule manager and technician checklists
-
-📤 Excel + PDF export for sponsors
-
-📬 Impact metrics and KPI summaries
+🗓️ Schedule manager for daily checks
 
 📤 Excel Export
 
-import * as XLSX from 'xlsx';
-const worksheet = XLSX.utils.json_to_sheet(diagnostics);
-const workbook = XLSX.utils.book_new();
-XLSX.utils.book_append_sheet(workbook, worksheet, 'Diagnostics');
-XLSX.writeFile(workbook, 'hydrogrid_report.xlsx');
-
-📬 PDF Export
-
-const PDFDocument = require('pdfkit');
-const doc = new PDFDocument();
-doc.text('Hydrogrid Sponsor Report');
-diagnostics.forEach(d => {
-  doc.text(`${d.zone} – ${d.issue} – ${d.recommendation}`);
-});
-doc.end();
-
-🔐 Role-Based Access
-
-Admin: Manage zones, thresholds, analytics
-
-Technician: View assigned zone, complete checklist, submit diagnostics
-
-🧪 Onboarding Guide
-
-Login with credentials
-
-View assigned zone and checklist
-
-Submit diagnostics and export reports
-
-Use mobile layout for field access
+import * as XLSX from 'xlsx'; const worksheet = XLSX.utils.json_to_sheet(diagnostics); const workbook = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(workbook, worksheet, 'Diagnostics'); XLSX.writeFile(workbook, 'hydrogrid_report.xlsx');
 
 🛡️ Branding & Sponsor Polish
 
@@ -136,8 +66,6 @@ Hydrogrid logo and color palette
 Modular cards and clean layout
 
 Mission statement and impact metrics
-
-PDF-ready summaries and export tools
 
 📍 Deployment
 
@@ -155,7 +83,5 @@ Hydrogrid – Sponsor & Deployment Partner
 
 📬 Contact
 
-📧 hassan@hydrogrid.africa
-
-🌍 hydrogrid.africa
+For sponsor inquiries or deployment partnerships:📧 hassan@hydrogrid.africa🌍 hydrogrid.africa
 
